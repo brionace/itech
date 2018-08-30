@@ -1,6 +1,44 @@
-.container .block {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start; }
+body {
+  font-size: 60px;
+  background-color: white; }
+
+.container {
+  width: 400px;
+  margin: 0 aut0; }
+  .container .block {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    border-bottom: 1px solid dimgray; }
+    .container .block:last-child {
+      border-bottom: 0; }
+    .container .block.view-area {
+      height: 200px;
+      background: dimgray;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: right;
+      color: white; }
+      .container .block.view-area > * {
+        padding: 0 40px; }
+      .container .block.view-area .calculus.calculated {
+        color: darkgray;
+        font-size: 40px; }
+      .container .block.view-area .answer {
+        display: none; }
+    .container .block .btn {
+      flex: 1;
+      border: 0;
+      background-color: #e44949;
+      font-size: 24px;
+      padding: 40px;
+      color: white; }
+      .container .block .btn.dred {
+        background-color: #de1414; }
+        .container .block .btn.dred.save {
+          flex: 5.5; }
+      .container .block .btn.orange {
+        background-color: orange; }
 
 /*# sourceMappingURL=style.css.map */
