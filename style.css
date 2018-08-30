@@ -13,7 +13,7 @@ body {
     .container .block:last-child {
       border-bottom: 0; }
     .container .block.view-area {
-      height: 200px;
+      height: 205px;
       background: dimgray;
       display: flex;
       flex-direction: column;
