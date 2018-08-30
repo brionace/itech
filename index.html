@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>iTech Task</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
 <script src="script.js" defer></script>
 </head>
 
@@ -14,33 +15,33 @@
 		<div class="answer">0</div>
 	</div>
 	<div class="block">
-		<button class="btn dred">AC</button>
-		<button class="btn dred save">SAVE</button>
-		<button class="btn orange">÷</button>
+		<button class="btn dred" id="AC">AC</button>
+		<button class="btn dred save" id="SAVE">SAVE</button>
+		<button class="btn orange" id="DIVIDE" data-symbol="/">÷</button>
 	</div>
 	<div class="block">
 		<button class="btn">.</button>
 		<button class="btn">0</button>
 		<button class="btn"></button>
-		<button class="btn orange">x</button>
+		<button class="btn orange" id="TIMES" data-symbol="*">x</button>
 	</div>
 	<div class="block">
 		<button class="btn">1</button>
 		<button class="btn">2</button>
 		<button class="btn">3</button>
-		<button class="btn orange">-</button>
+		<button class="btn orange" id="MINUS" data-symbol="-">-</button>
 	</div>
 	<div class="block">
 		<button class="btn">4</button>
 		<button class="btn">5</button>
 		<button class="btn">6</button>
-		<button class="btn orange">+</button>
+		<button class="btn orange" id="PLUS" data-symbol="+">+</button>
 	</div>
 	<div class="block">
 		<button class="btn">7</button>
 		<button class="btn">8</button>
 		<button class="btn">9</button>
-		<button class="btn orange">=</button>
+		<button class="btn orange" id="EQUALS" data-symbol="=">=</button>
 	</div>
 </div>
 </body>

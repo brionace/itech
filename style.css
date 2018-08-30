@@ -4,7 +4,7 @@ body {
 
 .container {
   width: 400px;
-  margin: 0 aut0; }
+  margin: 0 auto; }
   .container .block {
     display: flex;
     flex-direction: row;
