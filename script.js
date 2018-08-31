@@ -10,7 +10,7 @@ $(document).ready(function(){
 			
 		}else if( id == 'SAVE' ){			
 			var data = { 'number': $('.answer').text(), 'ip': getIp(), 'browser': $.browser }
-			$.post( "https://brianory.me/kano/save-csv.php", function( data ) {
+			$.post( "save-csv.php", function( data ) {
 			  if(data){
 				  $('.answer').text('SAVED');
 			  }
