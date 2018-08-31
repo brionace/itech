@@ -8,18 +8,19 @@ $(document).ready(function(){
 			
 			clearScreen();
 			
-		}else if( id == 'SAVE' ){
+		}else if( id == 'SAVE' ){			
+			var data = { 'number': $('.answer').text(), 'ip': getIp(), 'browser': $.browser }
+			$.post( "https://brianory.me/kano/save-csv.php", function( data ) {
+			  if(data){
+				  $('.answer').text('SAVED');
+			  }
+			});			
 			
-		}else{
-			
-			//Clear screen if already done calculations
-			if($('.answer').text() != '0'){
-				//clearScreen();
-			}			
-			
+		}else{			
+			// Add to store array
 			if( id != null && $(this).attr('data-symbol') != null ){
 				store.push('<span>'+$(this).attr('data-symbol')+'</span>');
-			}else{
+			}else{				
 				store.push( $(this).text() );				
 			}			
 			
@@ -38,7 +39,6 @@ $(document).ready(function(){
 		
     });
 	
-	console.log(store);
 	
 	function doCalculations(){
 		var newStore = [];
@@ -50,14 +50,28 @@ $(document).ready(function(){
 		});
 		
 		var answer = newStore.slice(0,-1).join("");
-		console.log(eval(answer));
-		$('.answer').text( eval(answer) )
+		answer = eval(answer);
+		$('.answer').text( answer.toLocaleString() )
 	}
 	
 	function clearScreen(){
 		$('.answer').hide();
 		$('.calculus').text('0').removeClass('calculated');
 		store.length = 0;		
+	}
+	
+	function formatNumber(number) {
+		var n = number.toString().split(".");
+		n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+		return n.join(".");
+	}
+	
+	function getIp(){
+		var ip = '';
+		$.getJSON("http://jsonip.com?callback=?", function (data) {
+			ip = data;
+		});	
+		return ip;
 	}
 	
 });

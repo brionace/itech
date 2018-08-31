@@ -22,11 +22,16 @@ body {
       color: white; }
       .container .block.view-area > * {
         padding: 0 40px; }
-      .container .block.view-area .calculus.calculated {
-        color: darkgray;
-        font-size: 40px; }
+      .container .block.view-area .calculus {
+        overflow: hidden;
+        text-overflow: ellipsis; }
+        .container .block.view-area .calculus.calculated {
+          color: darkgray;
+          font-size: 40px; }
       .container .block.view-area .answer {
-        display: none; }
+        display: none;
+        overflow: hidden;
+        word-wrap: break-word; }
     .container .block .btn {
       flex: 1;
       border: 0;
